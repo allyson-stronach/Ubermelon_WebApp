@@ -44,7 +44,14 @@ def add_to_cart(id):
     shopping cart page, while displaying the message
     "Successfully added to cart" """
 
-    return "Oops! This needs to be implemented!"
+    count = 1
+    string_id = str(id)
+    if (string_id in session):
+        session[string_id] = (session[string_id] + 1)
+    else:
+        session[string_id] = count
+
+    return "something else happened"
 
 
 @app.route("/login", methods=["GET"])
